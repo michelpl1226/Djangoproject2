@@ -14,7 +14,7 @@ from pathlib import Path
 
 import os
 
-import config.db as db
+import app.config.db as db
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
