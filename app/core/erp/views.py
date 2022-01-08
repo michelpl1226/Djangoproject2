@@ -1,10 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from app.core.erp.models import Category
 
-# Create your views here.
+
 def first(request):
+    data = {
+        'name': 'michel',
+        'categories': Category.objects.all()
 
-    return HttpResponse('unouno')
+    }
+
+    return render(request, 'index.html', data)
 
 def second(request):
+
     return HttpResponse('dosdos')

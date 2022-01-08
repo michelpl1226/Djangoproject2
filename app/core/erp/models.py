@@ -2,9 +2,6 @@ from django.db import models
 from datetime import datetime
 
 
-# from core.erp.models import *
-
-
 class Category(models.Model):
     name = models.CharField(max_length=150, verbose_name='Nombre', unique=True)
 
@@ -36,6 +33,12 @@ class Product(models.Model):
         verbose_name_plural = 'Productos'
         db_table = 'producto'
         ordering = ['id']
+
+
+class SEX(models.TextChoices):
+    MALE = 'MALE', 'MALE'
+    FEMALE = 'FEMALE', 'FEMALE'
+    OTHER = 'OTHER', 'OTHER'
 
 
 class Client(models.Model):
@@ -96,9 +99,3 @@ class DetSale(models.Model):
 
 for i in Category.objects.filter():
     print(i)
-
-
-class SEX(models.TextChoices):
-    MALE = 'MALE', 'MALE'
-    FEMALE = 'FEMALE', 'FEMALE'
-    OTHER = 'OTHER', 'OTHER'
